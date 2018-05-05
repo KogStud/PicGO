@@ -1,15 +1,17 @@
 package com.example.hule.picgo.Game;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.example.hule.picgo.Words.Word;
 import com.example.hule.picgo.Words.WordFactory;
+import com.example.hule.picgo.Words.WordImage;
 
 // init() first
 // Get info from getInfo()
 // compare(pic, word) -> do ML here later
-//
+// okokokokok
 public final class Main {
 
     private int score;
@@ -44,5 +46,9 @@ public final class Main {
         }
         currentWord = wordFactory.getWord();
         return false;
+    }
+
+    public Drawable answerImage() {
+        return WordImage.getDrawable(wordToString());
     }
 }
