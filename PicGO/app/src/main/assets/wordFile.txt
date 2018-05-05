@@ -3,3 +3,8 @@ mat,50
 katt,30
 vatten,40
 regn,20
+köttbullar,70
+potatis,50
+stol,20
+penna,30
+dator,100
