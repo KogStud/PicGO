@@ -1,6 +1,4 @@
-sten,20
 stol,20
 penna,30
 dator,100
 burk,50
-glas,20
