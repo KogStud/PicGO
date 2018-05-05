@@ -10,8 +10,16 @@ public class Word {
         this.word = word;
     }
 
+    public Word(Word word) {
+        this.points = word.getPoints();
+        this.word = word.getWord();
+    }
+
     public String toString() {
         String str = word + ",  " + points;
         return str;
     }
+
+    public String getWord() { return word; }
+    public int getPoints() { return points; }
 }
