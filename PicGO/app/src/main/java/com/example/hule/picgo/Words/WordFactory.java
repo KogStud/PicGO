@@ -21,7 +21,7 @@ public class WordFactory {
     private Context mContext;
     private List<String> words;
 
-    private WordFactory(Context mContext) {
+    public WordFactory(Context mContext) {
         this.mContext = mContext;
         initiated = true;
         wordFactory = this;
@@ -34,7 +34,7 @@ public class WordFactory {
         return wordFactory;
     }
 
-    private List<String> readLine() {//String path){
+    public List<String> readLine() {//String path){
         List<String> mLines = new ArrayList<>();
 
         AssetManager am = mContext.getAssets();

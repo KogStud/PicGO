@@ -4,7 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background ="@color/greyLight"
     tools:context=".MainActivity">
+    android:orientation = "vertical"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:background="@drawable/gradientbackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/text"
