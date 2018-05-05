@@ -10,7 +10,7 @@ import com.example.hule.picgo.Words.WordFactory;
 // Get info from getInfo()
 // compare(pic, word) -> do ML here later
 //
-public final class main {
+public final class Main {
 
     private int score;
     private static WordFactory wordFactory;
@@ -30,6 +30,7 @@ public final class main {
     public Word getCurrentWord() {
         return new Word(currentWord);
     }
+    public String wordToString(){ return currentWord.getWord();}
 
     public int getScore() {
         return score;
