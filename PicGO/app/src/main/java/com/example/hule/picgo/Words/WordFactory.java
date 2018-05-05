@@ -13,13 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordFactory {
-    private boolean initiated = false;
-    private WordFactory wordFactory;
+    private static boolean initiated = false;
+    private static WordFactory wordFactory;
+
+    private List<String> words;
 
     // stackoverflow
     private String fileName = "wordFile.txt";
     private Context mContext;
-    private List<String> words;
 
     public WordFactory(Context mContext) {
         this.mContext = mContext;
@@ -27,10 +28,9 @@ public class WordFactory {
         wordFactory = this;
     }
 
-    public WordFactory singleton(Context mContext) {
+    public static WordFactory singleton(Context mContext) {
         if(initiated) return wordFactory;
         wordFactory = new WordFactory(mContext);
-        this.wordFactory = wordFactory;
         return wordFactory;
     }
 
