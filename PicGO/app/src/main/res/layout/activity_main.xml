@@ -7,26 +7,45 @@
     android:background ="@color/greyLight"
     tools:context=".MainActivity">
     android:orientation = "vertical"
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="130dp"
+        tools:ignore="MissingConstraints">
+
+
         <LinearLayout
-            android:background="@drawable/gradientbackground"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
+            android:layout_height="match_parent"
+            android:background="@drawable/gradientbackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Word: Sten"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:gravity="center"
+                />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="303dp"
+                app:srcCompat="@drawable/testpic" />
+
+        </LinearLayout>
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="285dp"
-        android:layout_height="335dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
 
     <Button
         android:id="@+id/button"
