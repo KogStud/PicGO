@@ -1,0 +1,5 @@
+sten,20
+mat,50
+katt,30
+vatten,40
+regn,20
