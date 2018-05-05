@@ -43,6 +43,12 @@
                 android:layout_height="303dp"
                 app:srcCompat="@drawable/testpic" />
 
+            <ImageView
+                android:id="@+id/correct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
         </LinearLayout>
     </RelativeLayout>
 
@@ -51,7 +57,7 @@
         android:id="@+id/capture"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_marginBottom="109dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="Capture"
@@ -69,7 +75,7 @@
         android:text="Skip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -82,7 +88,7 @@
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
