@@ -43,11 +43,13 @@ public final class Main {
     public boolean checkImage(ImageView img) {
         if(imageRecognizer.imageContains(img, currentWord.getWord())) {
            score += currentWord.getPoints();
-           currentWord = wordFactory.getWord();
            return true;
         }
-        currentWord = wordFactory.getWord();
         return false;
+    }
+
+    public void nextWord() {
+        currentWord = wordFactory.getWord();
     }
 
     public Drawable answerImage() {
