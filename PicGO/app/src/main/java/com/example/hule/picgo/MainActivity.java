@@ -2,7 +2,6 @@ package com.example.hule.picgo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -18,10 +17,13 @@ public class MainActivity extends AppCompatActivity {
     private static final int request_capture = 1;
     private ImageView result_photo;
 
-    private Button button;
+    private Button capture;
+    private Button skip;
+    private Button submit;
     private TextView score;
     private TextView word;
     private Main main;
+    private ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,27 @@ public class MainActivity extends AppCompatActivity {
         final Context context = this.getBaseContext();
         main.init(context);
 
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        capture = (Button) findViewById(R.id.capture);
+        capture.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                launchCamera(v);
+            }
+        });
+
+        submit = (Button) findViewById(R.id.submit);
+        submit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                main.checkImage(result_photo);
+                update();
+            }
+        });
+
+        skip = (Button) findViewById(R.id.skip);
+        skip.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -45,10 +66,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         score = (TextView) findViewById(R.id.score);
-        score.setText(Integer.toString(main.getScore()));
-
         word = (TextView) findViewById(R.id.word);
-        word.setText(main.wordToString());
+        update();
 
     }
 
@@ -64,5 +83,10 @@ public class MainActivity extends AppCompatActivity {
             Bitmap photo = (Bitmap) extras.get("data");
             result_photo.setImageBitmap(photo);
         }
+    }
+
+    private void update(){
+        word.setText(main.wordToString() + "   " + main.getCurrentWord().getPoints());
+        score.setText("Score: "+ Integer.toString(main.getScore()));
     }
 }

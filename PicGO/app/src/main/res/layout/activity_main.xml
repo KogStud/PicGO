@@ -11,9 +11,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="130dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
 
         <LinearLayout
@@ -24,8 +24,9 @@
 
             <TextView
                 android:id="@+id/score"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
@@ -34,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
 
             <ImageView
                 android:id="@+id/imageView"
@@ -46,9 +48,9 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/capture"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:layout_marginBottom="109dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -58,7 +60,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -71,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
