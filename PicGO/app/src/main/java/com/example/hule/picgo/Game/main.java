@@ -11,18 +11,20 @@ import com.example.hule.picgo.Words.WordImage;
 // init() first
 // Get info from getInfo()
 // compare(pic, word) -> do ML here later
-// okokokokok
+//
 public final class Main {
 
     private int score;
     private static WordFactory wordFactory;
     private Word currentWord;
     private ImageRecognizer imageRecognizer;
+    private Context context;
 
     public void init(Context mContext, ImageRecognizer imageRecognizer) {
         wordFactory = WordFactory.singleton(mContext);
         currentWord = wordFactory.getWord();
         this.imageRecognizer = imageRecognizer;
+        this.context = mContext;
     }
 
     public void init(Context mContext) {
@@ -49,6 +51,6 @@ public final class Main {
     }
 
     public Drawable answerImage() {
-        return WordImage.getDrawable(wordToString());
+        return WordImage.getDrawable(context, wordToString());
     }
 }
