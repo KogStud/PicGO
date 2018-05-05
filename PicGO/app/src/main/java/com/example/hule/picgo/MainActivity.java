@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.hule.picgo.Game.Main;
+import com.example.hule.picgo.Words.WordImage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,10 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
         skip = (Button) findViewById(R.id.skip);
         skip.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                launchCamera(v);
+                result_photo.setImageDrawable(main.answerImage());
             }
         });
 
