@@ -11,7 +11,7 @@ import com.example.hule.picgo.Words.WordImage;
 // init() first
 // Get info from getInfo()
 // compare(pic, word) -> do ML here later
-//
+// okokokokok
 public final class Main {
 
     private int score;
