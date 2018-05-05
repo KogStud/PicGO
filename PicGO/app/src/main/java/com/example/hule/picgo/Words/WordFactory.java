@@ -13,17 +13,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordFactory {
+    private boolean initiated = false;
+    private WordFactory wordFactory;
 
     // stackoverflow
+    private String fileName = "wordFile.txt";
+    private Context mContext;
+    private List<String> words;
 
-    String fileName = "wordFile.txt";
-    Context mContext;
-
-    public WordFactory(Context mContext) {
+    private WordFactory(Context mContext) {
         this.mContext = mContext;
+        initiated = true;
+        wordFactory = this;
     }
 
-    public List<String> readLine() {//String path){
+    public WordFactory singleton(Context mContext) {
+        if(initiated) return wordFactory;
+        wordFactory = new WordFactory(mContext);
+        this.wordFactory = wordFactory;
+        return wordFactory;
+    }
+
+    private List<String> readLine() {//String path){
         List<String> mLines = new ArrayList<>();
 
         AssetManager am = mContext.getAssets();

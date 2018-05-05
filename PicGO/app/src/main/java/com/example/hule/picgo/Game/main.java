@@ -5,7 +5,7 @@ public final class main {
     private int score;
 
 
-    public void init() {
+    public static void init() {
 
     }
 }
