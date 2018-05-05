@@ -23,6 +23,10 @@ public final class main {
         this.imageRecognizer = imageRecognizer;
     }
 
+    public void init(Context mContext) {
+        init(mContext, new TrueRecognizer());
+    }
+
     public Word getCurrentWord() {
         return new Word(currentWord);
     }
