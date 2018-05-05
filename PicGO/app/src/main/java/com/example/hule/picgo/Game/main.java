@@ -54,5 +54,6 @@ public final class Main {
 
     public Drawable answerImage() {
         return WordImage.getDrawable(context, wordToString());
+        //means nothing
     }
 }
