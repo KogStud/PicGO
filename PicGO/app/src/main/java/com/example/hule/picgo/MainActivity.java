@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView score;
     private TextView word;
     private Main main;
-    private ImageView img;
+    private ImageView correct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         result_photo = (ImageView)findViewById(R.id.imageView);
-
+        correct = findViewById(R.id.correct);
+        correct.setVisibility(View.INVISIBLE);
 
         main = new Main();
         final Context context = this.getBaseContext();
@@ -52,7 +53,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                main.checkImage(result_photo);
+                if(main.checkImage(result_photo)) {
+                    correct.setImageResource(R.drawable.correct);
+                } else {
+                    correct.setImageResource(R.drawable.wrong);
+                }
+                showCorrect();
+                correct.setVisibility(View.VISIBLE);
                 update();
             }
         });
@@ -61,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result_photo.setImageDrawable(main.answerImage());
+                correct.setVisibility(View.INVISIBLE);
+                main.
             }
         });
 
@@ -88,5 +96,9 @@ public class MainActivity extends AppCompatActivity {
     private void update(){
         word.setText(main.wordToString() + "   " + main.getCurrentWord().getPoints());
         score.setText("Score: "+ Integer.toString(main.getScore()));
+    }
+
+    private void showCorrect(){
+        result_photo.setImageDrawable(main.answerImage());
     }
 }
