@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 launchCamera(v);
+                result_photo.setVisibility(View.VISIBLE);
             }
         });
 
