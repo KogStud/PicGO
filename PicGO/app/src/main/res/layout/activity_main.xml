@@ -36,12 +36,12 @@
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="303dp"
-                app:srcCompat="@drawable/testpic" />
+                app:srcCompat="@drawable/testpic"
+                />
 
             <ImageView
                 android:id="@+id/correct"
