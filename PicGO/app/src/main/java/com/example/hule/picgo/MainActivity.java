@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(main.checkImage(result_photo)) {
-                    correct.setImageDrawable(main.answerImage());
+                    correct.setImageResource(R.drawable.correct);
                 } else {
-                    correct.setImageDrawable(main.answerImage());
+                    correct.setImageResource(R.drawable.wrong);
                 }
                 showCorrect();
                 correct.setVisibility(View.VISIBLE);
