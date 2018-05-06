@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 showCorrect();
                 correct.setVisibility(View.VISIBLE);
+                result_photo.setVisibility(View.VISIBLE);
                 update();
             }
         });
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 correct.setVisibility(View.INVISIBLE);
+                result_photo.setVisibility(View.INVISIBLE);
                 main.nextWord();
                 update();
             }
