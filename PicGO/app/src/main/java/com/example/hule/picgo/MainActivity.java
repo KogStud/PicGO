@@ -3,6 +3,7 @@ package com.example.hule.picgo;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.hule.picgo.Game.Main;
 import com.example.hule.picgo.Words.WordImage;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(main.checkImage(result_photo)) {
-                    correct.setImageResource(R.drawable.correct);
+                    correct.setImageDrawable(main.answerImage());
                 } else {
-                    correct.setImageResource(R.drawable.wrong);
+                    correct.setImageDrawable(main.answerImage());
                 }
                 showCorrect();
                 correct.setVisibility(View.VISIBLE);
