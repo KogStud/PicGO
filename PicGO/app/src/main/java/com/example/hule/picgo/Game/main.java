@@ -19,12 +19,14 @@ public final class Main {
     private Word currentWord;
     private ImageRecognizer imageRecognizer;
     private Context context;
+    private WordImage wordImage;
 
     public void init(Context mContext, ImageRecognizer imageRecognizer) {
         wordFactory = WordFactory.singleton(mContext);
         currentWord = wordFactory.getWord();
         this.imageRecognizer = imageRecognizer;
         this.context = mContext;
+        this.wordImage = WordImage.singleton(mContext);
     }
 
     public void init(Context mContext) {
@@ -53,7 +55,7 @@ public final class Main {
     }
 
     public Drawable answerImage() {
-        return WordImage.getDrawable(context, wordToString());
+        return wordImage.getDrawable(wordToString());
         //means nothing
     }
 }
