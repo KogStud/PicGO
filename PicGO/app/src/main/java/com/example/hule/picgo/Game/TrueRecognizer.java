@@ -5,10 +5,10 @@ import android.widget.ImageView;
 import java.util.Random;
 
 public class TrueRecognizer implements ImageRecognizer {
+    private static Boolean matches = true;
     @Override
     public Boolean imageContains(ImageView image, String word) {
-        int random = new Random().nextInt(2);
-        if(random == 0) return true;
-        return false;
+        matches = !matches;
+        return matches;
     }
 }
